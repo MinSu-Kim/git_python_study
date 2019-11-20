@@ -12,3 +12,7 @@ print()
 for item in t_list:
     print("{} type : {}".format(item, type(item)))
 
+# tuple1[1] = 5
+print("{}, {}".format(tuple1[1] , tuple1.index(2)))
+
+
