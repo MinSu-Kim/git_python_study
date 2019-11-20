@@ -1,3 +1,7 @@
+def test():
+    pass
+
+
 def dict_app(country_name):
     for key in country_name.keys():
         print("key {} type {}".format(key, type(key)))
@@ -42,3 +46,4 @@ if __name__ == "__main__":
     print(country_name)
 
     dict_app(country_name)
+    test()
