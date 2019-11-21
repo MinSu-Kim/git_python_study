@@ -8,4 +8,5 @@ student_management 패키지를 추가
 3. 각각 메뉴별 수행되도록 작성
 4. 종료 시 학생목록이 student_list.txt에 저장
 
+5. 프린트하여 제출하세요.
 """
