@@ -1,7 +1,9 @@
 """
-list, tuple, dictionary, set 을 이용하여 아래 프로그램 각각 을 작성하시오.
-
+list, tuple, dictionary, set에서 하나를 선택하여 아래 프로그램을 작성하시오.
+--> dictionary, 하나
 student_management 패키지를 추가
+학생 정보는 : 학생번호, 학생명, 국어, 영어, 수학
+출력 결과 : 1, 김승영, 90, 90, 90, 270, 90.0
 
 1. 학생목록, 2. 학생 추가, 3. 학생 수정, 4. 학생 삭제, 5. 종료 메뉴 추가
 2. 프로그램 수행 시 먼저 student_list.txt 파일을 읽어와 수행
