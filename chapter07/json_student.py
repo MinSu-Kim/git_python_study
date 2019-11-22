@@ -62,8 +62,7 @@ def std_list_write_file(students):
 
 def add_std_info(students):
     std_info = get_std_info("번호 성명 국어 영어 수학을 입력하세요. ex)최영민 90 90 90 >> ")
-    dict_std = {'no': std_info[0], 'name':std_info[1],
-                'score': {'국어': int(std_info[2]), '영어': int(std_info[3]), '수학': int(std_info[4])}}
+    dict_std = {'no': std_info[0], 'name':std_info[1], 'score': {'국어': int(std_info[2]), '영어': int(std_info[3]), '수학': int(std_info[4])}}
     students.append(dict_std)
 
 
