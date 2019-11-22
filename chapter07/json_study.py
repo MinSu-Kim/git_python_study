@@ -33,7 +33,9 @@ students = json.loads(x)
 type(students)
 
 for std in students:
+    print("{} {} #{} {} {}".format(type(std['no']), type(std['name']), type(std['score']['국어']), type(std['score']['영어']), type(std['score']['수학'])))
     print(std['no'], std['name'], end=' ')
-    total = sum([int(x) for x in std['score'].values()])
+    total = sum([x for x in std['score'].values()])
+    # total = std['score']['국어'] + std['score']['영어'] + std['score']['수학']
     [print(score, end=' ') for score in std['score'].values()]
     print(total, total / float(3))
