@@ -1,4 +1,5 @@
 import json
+import os
 
 """
 student = [
@@ -14,12 +15,27 @@ student = [
     }
 ]
 """
+file_name = 'json_test.txt'
 
 
 def std_list_read_file():
-    with open('json_test.txt', 'r', encoding='utf-8') as f:  # json 형태의 파일 load
-        x = json.load(f)
-    return json.loads(x)
+    if os.path.isfile(file_name):
+        with open(file_name, 'r', encoding='utf-8') as f:  # json 형태의 파일 load
+            x = json.load(f)
+            return json.loads(x)
+    else:
+        return [
+            {
+                'no': 1,
+                'name': '김승영',
+                'score': {'국어': 90, '영어': 90, '수학': 90}
+            },
+            {
+                'no': 2,
+                'name': '지재삼',
+                'score': {'국어': 80, '영어': 79, '수학': 69}
+            }
+        ]
 
 
 def show_menu():
@@ -33,20 +49,21 @@ def show_menu():
 def show_std_list(students):
     for std in students:
         print(std['no'], std['name'], end=' ')
-        total = sum([x for x in std['score'].values()])
         [print(score, end=' ') for score in std['score'].values()]
+        total = sum([x for x in std['score'].values()])
         print("{} {:.2f}".format(total, total / float(3)))
 
 
 def std_list_write_file(students):
     json_student = json.dumps(students)
-    with open('json_test.txt', 'w', encoding='utf-8') as f:
+    with open(file_name, 'w', encoding='utf-8') as f:
         json.dump(json_student, f)
 
 
 def add_std_info(students):
     std_info = get_std_info("번호 성명 국어 영어 수학을 입력하세요. ex)최영민 90 90 90 >> ")
-    dict_std ={'no': std_info[0], 'name':std_info[1], 'score': {'국어': int(std_info[2]), '영어': int(std_info[3]), '수학': int(std_info[4])}}
+    dict_std = {'no': std_info[0], 'name':std_info[1],
+                'score': {'국어': int(std_info[2]), '영어': int(std_info[3]), '수학': int(std_info[4])}}
     students.append(dict_std)
 
 
