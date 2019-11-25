@@ -61,14 +61,19 @@ def std_list_write_file(students):
 
 
 def add_std_info(students):
-    std_info = get_std_info("번호 성명 국어 영어 수학을 입력하세요. ex)최영민 90 90 90 >> ")
-    dict_std = {'no': std_info[0], 'name':std_info[1], 'score': {'국어': int(std_info[2]), '영어': int(std_info[3]), '수학': int(std_info[4])}}
+    std_info = get_std_info("성명 국어 영어 수학을 입력하세요. ex)최영민 90 90 90 >> ")
+    dict_std = {'no': len(students) + 1,
+                'name': std_info[0],
+                'score': {'국어': int(std_info[1]),
+                          '영어': int(std_info[2]),
+                          '수학': int(std_info[3])}
+                }
     students.append(dict_std)
 
 
 def get_std_info(msg):
-    res = input(msg)
-    std_info = res.split()
+    res = input(msg)   # '최영민 90 90 90'
+    std_info = res.split() #['최영민', '90', '90', '90']
     return std_info
 
 
@@ -76,7 +81,6 @@ def update_std_info(students):
     show_std_list(students)
     res = input("수정할 학생번호를 입력하세요. >>")
     for std in students:
-        print(std, type(std['no']))
         if int(res) == std['no']:
             std_info = get_std_info("수정할 국어 영어 수학을 입력하세요. ex)90 90 90 >> ")
             std['score']['국어'] = int(std_info[0])
