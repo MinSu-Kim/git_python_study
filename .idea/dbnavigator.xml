@@ -2,7 +2,7 @@
 <project version="4">
   <component name="DBNavigator.Project.DataEditorManager">
     <record-view-column-sorting-type value="BY_INDEX" />
-    <value-preview-text-wrapping value="true" />
+    <value-preview-text-wrapping value="false" />
     <value-preview-pinned value="false" />
   </component>
   <component name="DBNavigator.Project.DataExportManager">
@@ -23,15 +23,7 @@
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
-    <loaded-nodes>
-      <connection connection-id="cb943445-a19c-4d73-a9e9-4dadc0d5016d">
-        <schema name="coffee2" object-types="constraint, index, view, procedure, column, table, dataset trigger, function" />
-      </connection>
-      <connection connection-id="4ac4259d-b00b-4c4a-9755-da4cbb4188e0">
-        <schema name="coffee2" object-types="constraint, index, view, procedure, column, table, dataset trigger, function" />
-        <schema name="mysql_study" object-types="function" />
-      </connection>
-    </loaded-nodes>
+    <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="cb943445-a19c-4d73-a9e9-4dadc0d5016d">
