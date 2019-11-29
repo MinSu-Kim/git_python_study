@@ -9,7 +9,7 @@ def exam01():
             data = data.split()
 
             word_list = []
-            [word_list.append(word.strip('.').strip(',').strip('-')) for word in data if len(word.strip('-')) > 0]
+            [word_list.append(word.strip('.,-')) for word in data if len(word.strip(',.-')) > 0]
             # [print(data, end=' ') for data in word_list]
 
             # print()
@@ -18,7 +18,7 @@ def exam01():
                 result[word] = result.get(word, 0) + 1  # 없을때의 리턴값을 정해 줌
 
             # [print(key, value) for key,value in result.items() if value > 2]
-            res = sorted(result.items(), key=f1, reverse=True)
+            res = sorted(result.items(), key=get_value, reverse=True)
 
             print("=== 문제1 ===")
             [print("{:10s}\t{}".format(key, value)) for key, value in res if value > 2]
@@ -27,7 +27,7 @@ def exam01():
             print("해당 파일이 존재하지 않음", e, sep='\n')
 
 
-def f1(x):
+def get_value(x):
     return x[1]
 
 
